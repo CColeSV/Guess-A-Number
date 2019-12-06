@@ -11,6 +11,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  background-color: #f2c57c;
 }
 
 .App-link {
@@ -34,6 +35,11 @@ input {
   left: 50%;
   margin-top: -50px;
   margin-left: -100px;
+  box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+input:hover {
+  box-shadow: 0px 17px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
 /* input::placeholder {
@@ -41,15 +47,23 @@ input {
 
 h3 {
   /* border: 1px solid grey; */
-  position: fixed;
-  /* left: 0px;
-  bottom: 40px;
-  height: 30px;
-  width: 40%; */
-  background: #999;
+  /* background: #999;
+  position: relative;
+  top: 500px;
+  margin-left: 250px;
+  margin-right: 250px; */
+}
 
-  top: 70%;
-  left: 50%;
-  margin-top: -70px;
-  margin-left: -100px;
+.input {
+}
+
+.dbox {
+  border: 1px solid #999;
+  box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 500px;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
