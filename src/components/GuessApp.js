@@ -11,6 +11,7 @@ class GuessApp extends React.Component {
         <div>
           <h2>Guess A Number!</h2>
         </div>
+        {/* Start Game Function and THEN create Form Component*/}
         <div className="input">
           <input type="number"></input>
         </div>
