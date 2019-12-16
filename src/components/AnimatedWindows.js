@@ -3,7 +3,7 @@ import React from "react";
 class AnimatedWindows extends React.Component {
   render() {
     return (
-      <div>
+      <div className="windows">
         {/* if (input.value < state.value) {
         blueWindow()
       } else if (input.value > state.value) {
@@ -15,7 +15,6 @@ class AnimatedWindows extends React.Component {
 }
 
 export default AnimatedWindows;
-
 
 // Something for .show
 // Still working on this
