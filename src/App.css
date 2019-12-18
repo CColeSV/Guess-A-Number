@@ -30,7 +30,7 @@ h2 {
 }
 
 input {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -50px;
@@ -42,16 +42,23 @@ input:hover {
   box-shadow: 0px 17px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
-/* input::placeholder {
-} */
+input::placeholder {
+}
 
-h3 {
-  /* border: 1px solid grey; */
-  /* background: #999;
+/* h3 {
+  border: 1px solid grey;
+  background: #999;
   position: relative;
   top: 500px;
   margin-left: 250px;
-  margin-right: 250px; */
+  margin-right: 250px;
+} */
+
+.main-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .input {
@@ -68,8 +75,29 @@ h3 {
   padding-bottom: 25px;
 }
 
-.windows {
+/* .windows {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+} */
+
+.left-window {
   position: absolute;
+  background-color: black;
+  height: 100vw;
+  width: 20vw;
+  top: 0;
+  left: 0;
+}
 
+.right-window {
+  position: absolute;
+  background-color: black;
+  height: 100vw;
+  width: 20vw;
+  top: 0;
+  right: 0;
+}
 
+.right-window {
 }

@@ -3,7 +3,9 @@ import React from "react";
 class AnimatedWindows extends React.Component {
   render() {
     return (
-      <div className="windows">
+      <div className="windows-inside">
+        <div className="left-window"></div>
+        <div className="right-window"></div>
         {/* if (input.value < state.value) {
         blueWindow()
       } else if (input.value > state.value) {
