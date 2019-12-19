@@ -1,11 +1,6 @@
 import React from "react";
 
 class DirectionBox extends React.Component {
-  constructor() {
-    super();
-    this.state = { compGuess: Math.floor(Math.random() * 100 + 1) };
-    console.log(this.state);
-  }
   // startGame = function() {
   //   // compGuess = Math.floor(Math.random() * 100 + 1);
   // };

@@ -3,7 +3,11 @@ import DirectionBox from "./DirectionBox";
 import AnimatedWindows from "./AnimatedWindows";
 
 class GuessApp extends React.Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = { compGuess: Math.floor(Math.random() * 100 + 1) };
+    console.log(this.state);
+  }
   render() {
     return (
       <div className="main-container">
@@ -13,7 +17,7 @@ class GuessApp extends React.Component {
         </div>
         {/* Start Game Function and THEN create Form Component*/}
         <div className="input">
-          <input type="number"></input>
+          <input type="number" name="input"></input>
         </div>
         <div>
           <DirectionBox />
@@ -27,3 +31,9 @@ class GuessApp extends React.Component {
 }
 
 export default GuessApp;
+
+// somehow use setstate on input like I used onClick
+
+// hitting enter is a key event
+
+// set state based on logic
