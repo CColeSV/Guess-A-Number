@@ -81,22 +81,26 @@ input::placeholder {
   top: 0;
 } */
 
-.left-window {
+.blue-window {
   position: absolute;
-  background-color: black;
+  background-color: #7dd2dc;
   height: 100vw;
   width: 20vw;
   top: 0;
   left: 0;
+  opacity: 1;
+  /* box-shadow: 2px 2px 5px -2px; */
 }
 
-.right-window {
+.red-window {
   position: absolute;
-  background-color: black;
+  background-color: #f05050;
   height: 100vw;
   width: 20vw;
   top: 0;
   right: 0;
+  opacity: 1;
+  /* box-shadow: 2px 2px 5px 2px; */
 }
 
 .right-window {
