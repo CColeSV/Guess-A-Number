@@ -6,14 +6,13 @@ class GuessApp extends React.Component {
   constructor() {
     super();
     this.state = {
-      compGuess: Math.floor(Math.random() * 100 + 1),
-      iputValue: 1
+      compGuess: Math.floor(Math.random() * 100 + 1)
     };
 
     console.log(this.state);
   }
 
-  keyPressed(e) {
+  keyPressed = e => {
     if (e.key === "Enter") {
       console.log(e.target.value);
 
@@ -21,17 +20,22 @@ class GuessApp extends React.Component {
       let blueWindow = document.getElementById("blue-window");
 
       if (
-        e.target.value >= this.state.value - 10 &&
-        e.target.value <= this.state.value + 10
+        e.target.value === this.state.value
+        // e.target.value >= this.state.value - 10 ||
+        // e.target.value <= this.state.value + 10
       ) {
         // add FULL points of opacity to blue window
         // red LESS points of opacity
 
-        blueWindow.style.opacity = 0.8;
+        blueWindow.style.opacity = 0.2; //really .8
         redWindow.style.opacity = 1;
+
+        console.log("Yes");
+      } else {
+        console.log("Try again");
       }
     }
-  }
+  };
 
   render() {
     return (
