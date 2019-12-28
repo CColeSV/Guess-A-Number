@@ -14,23 +14,59 @@ class GuessApp extends React.Component {
 
   keyPressed = e => {
     if (e.key === "Enter") {
-      console.log(e.target.value);
+      e.preventDefault();
+      console.log("Guess = ", e.target.value);
+
+      console.log("Random Number = ", this.state.compGuess);
 
       let redWindow = document.getElementById("red-window");
       let blueWindow = document.getElementById("blue-window");
 
+      let absGuess = Math.abs(e.target.value - this.state.compGuess);
+
+      console.log(
+        "absolulte = ",
+        Math.abs(e.target.value - this.state.compGuess)
+      );
+
       if (
-        e.target.value === this.state.value
-        // e.target.value >= this.state.value - 10 ||
-        // e.target.value <= this.state.value + 10
+        // e.target.value >= this.state.compGuess - 10 &&
+        // e.target.value <= this.state.compGuess + 10
+        absGuess <= 5
       ) {
         // add FULL points of opacity to blue window
         // red LESS points of opacity
 
         blueWindow.style.opacity = 0.2; //really .8
         redWindow.style.opacity = 1;
+        document.getElementById("red-text").innerHTML = "EXTREMELY HOT";
 
-        console.log("Yes");
+        console.log("EXTREMELY HOT");
+      } else if (absGuess >= 6 && absGuess <= 10) {
+        blueWindow.style.opacity = 0.4;
+        redWindow.style.opacity = 0.8;
+        document.getElementById("red-text").innerHTML = "HOT";
+
+        console.log("Hot");
+      } else if (absGuess >= 11 && absGuess <= 29) {
+        blueWindow.style.opacity = 0.8;
+        redWindow.style.opacity = 0.4;
+        document.getElementById("blue-text").innerHTML = "Cold";
+
+        console.log("Cold");
+      } else if (
+        // (e.target.value >= this.state.compGuess - 30 &&
+        //   e.target.value <= this.state.compGuess - 10) ||
+        // (e.target.value <= this.state.compGuess + 30 &&
+        //   e.target.value >= this.state.compGuess + 10)
+
+        absGuess >= 30
+      ) {
+        blueWindow.style.opacity = 1; //really .8
+        redWindow.style.opacity = 0.2;
+        console.log("Extremely Cold");
+
+        document.getElementById("blue-text").innerHTML = "Extremely Cold";
       } else {
         console.log("Try again");
       }
@@ -56,8 +92,12 @@ class GuessApp extends React.Component {
           <DirectionBox />
         </div>
         <div className="windows">
-          <div className="blue-window" id="blue-window"></div>
-          <div className="red-window" id="red-window"></div>
+          <div className="blue-window" id="blue-window">
+            <p id="blue-text"></p>
+          </div>
+          <div className="red-window" id="red-window">
+            <p id="red-text"></p>
+          </div>
           {/* <AnimatedWindows /> */}
         </div>
       </div>
