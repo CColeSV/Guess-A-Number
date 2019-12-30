@@ -1,6 +1,5 @@
 import React from "react";
 import DirectionBox from "./DirectionBox";
-import AnimatedWindows from "./AnimatedWindows";
 
 class GuessApp extends React.Component {
   constructor() {
@@ -29,7 +28,16 @@ class GuessApp extends React.Component {
         Math.abs(e.target.value - this.state.compGuess)
       );
 
-      if (
+      if (absGuess === 0) {
+        console.log("Winner!!");
+
+        blueWindow.style.opacity = 1;
+        redWindow.style.opacity = 1;
+        document.getElementById("red-text").innerHTML = "";
+        document.getElementById("blue-text").innerHTML = "";
+
+        // Animate Popup --> WINNER!!
+      } else if (
         // e.target.value >= this.state.compGuess - 10 &&
         // e.target.value <= this.state.compGuess + 10
         absGuess <= 5
@@ -37,21 +45,24 @@ class GuessApp extends React.Component {
         // add FULL points of opacity to blue window
         // red LESS points of opacity
 
-        blueWindow.style.opacity = 0.2; //really .8
+        blueWindow.style.opacity = 0; //really .8
         redWindow.style.opacity = 1;
         document.getElementById("red-text").innerHTML = "EXTREMELY HOT";
+        document.getElementById("blue-text").innerHTML = "";
 
         console.log("EXTREMELY HOT");
       } else if (absGuess >= 6 && absGuess <= 10) {
-        blueWindow.style.opacity = 0.4;
+        blueWindow.style.opacity = 0;
         redWindow.style.opacity = 0.8;
         document.getElementById("red-text").innerHTML = "HOT";
+        document.getElementById("blue-text").innerHTML = "";
 
         console.log("Hot");
       } else if (absGuess >= 11 && absGuess <= 29) {
         blueWindow.style.opacity = 0.8;
-        redWindow.style.opacity = 0.4;
+        redWindow.style.opacity = 0;
         document.getElementById("blue-text").innerHTML = "Cold";
+        document.getElementById("red-text").innerHTML = "";
 
         console.log("Cold");
       } else if (
@@ -63,12 +74,11 @@ class GuessApp extends React.Component {
         absGuess >= 30
       ) {
         blueWindow.style.opacity = 1; //really .8
-        redWindow.style.opacity = 0.2;
+        redWindow.style.opacity = 0;
         console.log("Extremely Cold");
 
         document.getElementById("blue-text").innerHTML = "Extremely Cold";
-      } else {
-        console.log("Try again");
+        document.getElementById("red-text").innerHTML = " ";
       }
     }
   };
@@ -76,7 +86,6 @@ class GuessApp extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <h1>App</h1>
         <div>
           <h2>Guess A Number!</h2>
         </div>
@@ -106,9 +115,3 @@ class GuessApp extends React.Component {
 }
 
 export default GuessApp;
-
-// somehow use setstate on input like I used onClick
-
-// hitting enter is a key event
-
-// set state based on logic
