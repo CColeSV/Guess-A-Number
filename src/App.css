@@ -134,7 +134,25 @@ button {
 }
 
 #red-text {
+  font-size: 8rem;
+  font-weight: bolder;
+  color: white;
+  word-wrap: break-word;
+  width: 1px;
+  margin-left: 9rem;
+  transform: translateY(-25%);
+  padding: 10px;
+  opacity: 65%;
 }
 
 #blue-text {
+  font-size: 8rem;
+  font-weight: bolder;
+  color: white;
+  word-wrap: break-word;
+  width: 1px;
+  margin-left: 9rem;
+  transform: translateY(-25%);
+  padding: 10px;
+  opacity: 65%;
 }

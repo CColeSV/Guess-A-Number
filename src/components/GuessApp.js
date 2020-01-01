@@ -102,10 +102,10 @@ class GuessApp extends React.Component {
         </div>
         <div className="windows">
           <div className="blue-window" id="blue-window">
-            <p id="blue-text"></p>
+            <p id="blue-text">COLD</p>
           </div>
           <div className="red-window" id="red-window">
-            <p id="red-text"></p>
+            <p id="red-text">HOT</p>
           </div>
           {/* <AnimatedWindows /> */}
         </div>
