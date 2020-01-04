@@ -1,5 +1,6 @@
 import React from "react";
 import DirectionBox from "./DirectionBox";
+import swal from "sweetalert";
 
 class GuessApp extends React.Component {
   constructor() {
@@ -35,6 +36,15 @@ class GuessApp extends React.Component {
         redWindow.style.opacity = 1;
         document.getElementById("red-text").innerHTML = "";
         document.getElementById("blue-text").innerHTML = "";
+
+        swal("YOU WON!", "Good Job!", "success");
+
+        // swal({
+        //   title: "YOU WON!",
+        //   text: "Good Job!",
+        //   icon: "success",
+        //   button: "Aww yiss!"
+        // });
 
         // Animate Popup --> WINNER!!
       } else if (
@@ -86,7 +96,7 @@ class GuessApp extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <div>
+        <div className="h2">
           <h2>Guess A Number!</h2>
         </div>
         {/* Start Game Function and THEN create Form Component*/}
