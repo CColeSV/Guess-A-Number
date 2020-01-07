@@ -57,7 +57,7 @@ class GuessApp extends React.Component {
 
         blueWindow.style.opacity = 0; //really .8
         redWindow.style.opacity = 1;
-        document.getElementById("red-text").innerHTML = "EXTREMELY HOT";
+        document.getElementById("red-text").innerHTML = "VERY HOT";
         document.getElementById("blue-text").innerHTML = "";
 
         console.log("EXTREMELY HOT");
@@ -87,7 +87,7 @@ class GuessApp extends React.Component {
         redWindow.style.opacity = 0;
         console.log("Extremely Cold");
 
-        document.getElementById("blue-text").innerHTML = "EXTREMELY COLD";
+        document.getElementById("blue-text").innerHTML = "VERY COLD";
         document.getElementById("red-text").innerHTML = " ";
       }
     }
@@ -118,6 +118,7 @@ class GuessApp extends React.Component {
             <p id="red-text"></p>
           </div>
           {/* <AnimatedWindows /> */}
+          <div className="winner-box"></div>
         </div>
       </div>
     );
