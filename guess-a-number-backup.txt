@@ -6,9 +6,7 @@ class GuessApp extends React.Component {
   constructor() {
     super();
     this.state = {
-      compGuess: Math.floor(Math.random() * 100 + 1),
-      redWindowText: "",
-      blueWindowText: ""
+      compGuess: Math.floor(Math.random() * 100 + 1)
     };
 
     console.log(this.state);
@@ -36,14 +34,8 @@ class GuessApp extends React.Component {
 
         blueWindow.style.opacity = 1;
         redWindow.style.opacity = 1;
-
-        this.setState.redWindowText = "";
-        this.setState.blueWindowText = "";
-
-        // this.setState({
-        //   redWindowText: "",
-        //   blueWindowText: ""
-        // });
+        document.getElementById("red-text").innerHTML = "";
+        document.getElementById("blue-text").innerHTML = "";
 
         swal("YOU WON!", "Good Job!", "success");
 
@@ -65,10 +57,9 @@ class GuessApp extends React.Component {
 
         blueWindow.style.opacity = 0; //really .8
         redWindow.style.opacity = 1;
-        this.setState.redWindowText = "VERY HOT";
-        this.setState.blueWindowText = "";
+        document.getElementById("red-text").innerHTML = "VERY HOT";
+        document.getElementById("blue-text").innerHTML = "";
 
-        console.log(this.state);
         console.log("EXTREMELY HOT");
       } else if (absGuess >= 6 && absGuess <= 10) {
         blueWindow.style.opacity = 0;
@@ -121,10 +112,10 @@ class GuessApp extends React.Component {
         </div>
         <div className="windows">
           <div className="blue-window" id="blue-window">
-            <p id="blue-text">{this.state.blueWindowText}</p>
+            <p id="blue-text"></p>
           </div>
           <div className="red-window" id="red-window">
-            <p id="red-text">{this.state.redWindowText}</p>
+            <p id="red-text"></p>
           </div>
           {/* <AnimatedWindows /> */}
           <div className="winner-box"></div>
