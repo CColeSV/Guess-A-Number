@@ -37,8 +37,8 @@ class GuessApp extends React.Component {
         blueWindow.style.opacity = 1;
         redWindow.style.opacity = 1;
 
-        this.setState.redWindowText = "";
-        this.setState.blueWindowText = "";
+        this.setState({ redWindowText: "" });
+        this.setState({ blueWindowText: "" });
 
         // this.setState({
         //   redWindowText: "",
@@ -65,8 +65,9 @@ class GuessApp extends React.Component {
 
         blueWindow.style.opacity = 0; //really .8
         redWindow.style.opacity = 1;
-        this.setState.redWindowText = "VERY HOT";
-        this.setState.blueWindowText = "";
+
+        this.setState({ redWindowText: "VERY HOT" });
+        this.setState({ blueWindowText: "" });
 
         console.log(this.state);
         console.log("EXTREMELY HOT");
